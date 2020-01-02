@@ -1,6 +1,7 @@
 @import-normalize;
 @import './header.css';
-@import './footer.css'
+@import './footer.css';
+@import './blog.css';
 
 /* typography */
 /* questrial-regular - latin */
@@ -60,4 +61,17 @@
 
   button:hover {
       background-color: var(--brand-green);
+  }
+
+  .links-text {
+      padding: 3em 0;
+      font-size: 1.4em;
+  }
+
+  .links-text p, .links-contact {
+      margin: 1.4em 0;
+  }
+
+  .links-contact h4 {
+      text-transform: none;
   }

@@ -1,6 +1,6 @@
-const dotenv = require('dotenv')
+const dotenv = require("dotenv")
 
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.NODE_ENV !== "production") {
   dotenv.config()
 }
 
@@ -22,12 +22,12 @@ module.exports = {
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        plugins:[
+        plugins: [
           {
-            resolve: 'gatsby-remark-images'
-          }
-        ]
-      }
+            resolve: "gatsby-remark-images",
+          },
+        ],
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
@@ -51,19 +51,19 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-source-contentful',
+      resolve: "gatsby-source-contentful",
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
-      }
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      },
     },
     {
-      resolve: 'gatsby-plugin-snipcart',
-      options:{
+      resolve: "gatsby-plugin-snipcart",
+      options: {
         apiKey: process.env.SNIPCART_API_KEY,
-        autopop: true
-      }
-    }
+        autopop: true,
+      },
+    },
 
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

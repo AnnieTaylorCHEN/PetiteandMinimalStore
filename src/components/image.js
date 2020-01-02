@@ -24,9 +24,9 @@ const Image = () => {
         }
       }
 
-      iconImage :file(relativePath: { eq: "PM.png"}) {
-        childImageSharp{
-          fluid (maxWidth: 590) {
+      iconImage: file(relativePath: { eq: "PM.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 590) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -35,10 +35,11 @@ const Image = () => {
   `)
 
   return (
-  <>
-  <Img fluid={data.placeholderImage.childImageSharp.fluid} />
-  <Img fluid={data.iconImage.childImageSharp.fluid} />
-  </>)
+    <>
+      <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+      <Img fluid={data.iconImage.childImageSharp.fluid} />
+    </>
+  )
 }
 
 export default Image

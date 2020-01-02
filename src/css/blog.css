@@ -1,0 +1,38 @@
+.blog__title {
+    padding: 1em 0;
+}
+
+.blog__count {
+    padding: 1em 0.5em;
+}
+
+.blog__post {
+    margin: 3em 0;
+}
+
+.blog__post-title{
+    padding: 1em 0;
+}
+
+.blog__post-date {
+    color: var(--brown);
+    font-size: 0.8em;
+    margin-bottom: 1em;
+}
+
+.blog__post-text p {
+    margin: 1.4em 0;
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+.pagination:hover {
+    text-transform: underline;
+}
