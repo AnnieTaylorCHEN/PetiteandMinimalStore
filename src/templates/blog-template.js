@@ -18,7 +18,7 @@ export default ({ data, pageContext }) => {
           {data.allMarkdownRemark.totalCount} posts
         </h4>
 
-        {data.allMarkdownRemark.edges.map(({ node }, index) => (
+        {data.allMarkdownRemark.edges.map(({ node }) => (
           <div key={node.id} className="blog__post">
             <Link to={`/posts${node.fields.slug}`}>
               <h2 className="blog__post-title">
@@ -62,10 +62,11 @@ export default ({ data, pageContext }) => {
 
 export const query = graphql`
   query($skip: Int!, $limit: Int!) {
-    allMarkdownRemark(
+    allMarkdownRemark (
       skip: $skip
       limit: $limit
       sort: { order: DESC, fields: [frontmatter___date] }
+      filter: {fields: {sourceName: {eq: "blog"}}}
     ) {
       totalCount
       edges {

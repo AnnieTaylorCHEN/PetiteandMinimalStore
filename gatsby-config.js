@@ -29,10 +29,11 @@ module.exports = {
         ],
       },
     },
+    `gatsby-remark-source-name`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `pages`,
+        name: `blog`,
         path: `${__dirname}/src/posts`,
       },
     },
@@ -57,13 +58,13 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
-    {
-      resolve: "gatsby-plugin-snipcart",
-      options: {
-        apiKey: process.env.SNIPCART_API_KEY,
-        autopop: true,
-      },
-    },
+    // {
+    //   resolve: "gatsby-plugin-snipcart",
+    //   options: {
+    //     apiKey: process.env.SNIPCART_API_KEY,
+    //     autopop: true,
+    //   },
+    // },
 
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

@@ -2,13 +2,16 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
+import CountrySelectorNav from './countryselectornav'
+import LanguageSelectorNav from './languageselectornav'
+
 const isActive = ({ isCurrent }) => {
   return { className: isCurrent ? "active" : "navlink" }
 }
 
 const NavLink = props => <Link getProps={isActive} {...props} />
 
-const Header = ({ siteTitle }) => (
+const Header = ({ siteTitle, shipping, lang }) => (
   <header className="header">
     <h1>
       <NavLink to="/">{siteTitle}</NavLink>
@@ -21,6 +24,10 @@ const Header = ({ siteTitle }) => (
       <h3>
         <NavLink to="/blog">Blog</NavLink>
       </h3>
+      <div>
+          {shipping && <CountrySelectorNav shipping={shipping} lang={lang} />}
+          {shipping && <LanguageSelectorNav shipping={shipping} lang={lang} />}
+      </div>
       {/* shopping cart summary */}
       <div
         style={{

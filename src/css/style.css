@@ -75,3 +75,8 @@
   .links-contact h4 {
       text-transform: none;
   }
+
+  .is-active {
+      color: var(--brand-green);
+      font-weight: bold;
+  }
