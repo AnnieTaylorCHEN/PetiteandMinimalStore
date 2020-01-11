@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 
-const LanguageSelectorNav = ({ shipping, lang }) => {
+const LanguageSelectorNav = ({ shipping, language }) => {
     const env = process.env.NODE_ENV
     const { allContentfulCountry } = useStaticQuery(graphql`
         {
@@ -19,7 +19,7 @@ const LanguageSelectorNav = ({ shipping, lang }) => {
     `)
 
   const countries = allContentfulCountry.edges.filter(
-    ({ node }) => node.defaultLocale === lang
+    ({ node }) => node.defaultLocale === language
   )
   
   return (

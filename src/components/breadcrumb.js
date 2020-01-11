@@ -6,6 +6,7 @@ const Breadcrumb = (props) => {
     const env = process.env.NODE_ENV
     const home = env !== 'production' ? '/' : 'https://contentful-gatsby-demo.netlify.com/'
     const categoryLink = env !== 'production' ? `/${shop}/${lang.toLowerCase()}` : `/${lang.toLowerCase()}/${categorySlug}`
+    const productLink = env !== 'production' ? `/${shop}/${lang.toLowerCase()}` : `/${lang.toLowerCase()}/${categorySlug}/${productSlug}`
 
     return (
         <nav aria-label="breadcrumbs">
@@ -17,6 +18,12 @@ const Breadcrumb = (props) => {
                 {categorySlug && (
                 <li className={productSlug ? '' : 'is-active'}>
                     <Link to={categoryLink}>{categoryName}</Link>
+                </li>
+                )}
+
+                {productSlug && (
+                <li className="is-active">
+                    <Link to={productLink}>{productSlug}</Link>
                 </li>
                 )}
                 

@@ -15,7 +15,7 @@
     "gatsby-plugin-snipcart": "^1.1.2",
     "gatsby-remark-images": "^3.1.38",
     "gatsby-remark-source-name": "^1.0.0",
-    "gatsby-source-contentful": "^2.1.69",
+    "gatsby-source-contentful": "^2.1.76",
     "gatsby-source-filesystem": "^2.1.40",
     "gatsby-transformer-remark": "^2.6.42",
     "gatsby-transformer-sharp": "^2.3.7",

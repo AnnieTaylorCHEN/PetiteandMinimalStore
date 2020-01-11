@@ -28,9 +28,11 @@ export default ({ data, pageContext }) => {
                   - {node.frontmatter.date}
                 </span>
               </h2>
+              
               <Img
                 sizes={node.frontmatter.featuredImage.childImageSharp.sizes}
               />
+              
               <p>{node.excerpt}</p>
             </Link>
           </div>
@@ -80,7 +82,7 @@ export const query = graphql`
             date(formatString: "MMM Do, YYYY")
             featuredImage {
               childImageSharp {
-                sizes(maxWidth: 630) {
+                sizes(maxWidth: 630, maxHeight: 400) {
                   ...GatsbyImageSharpSizes
                 }
               }

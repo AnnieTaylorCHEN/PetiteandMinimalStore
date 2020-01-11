@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, useStaticQuery, graphql} from 'gatsby'
 
-const CountrySelectorNav = ({shipping, lang }) => {
+const CountrySelectorNav = ({shipping, language }) => {
     
     const { allContentfulCountry } = useStaticQuery(graphql`
         {
@@ -21,7 +21,7 @@ const CountrySelectorNav = ({shipping, lang }) => {
 
     const countries = allContentfulCountry.edges
     const selected = allContentfulCountry.edges.filter(
-    ({ node }) => node.code === shipping && node.defaultLocale === lang)
+    ({ node }) => node.code === shipping && node.defaultLocale === language)
 
     return (
         <div>
@@ -35,7 +35,7 @@ const CountrySelectorNav = ({shipping, lang }) => {
                 {countries.map(({ node: country }, index) => {
                 const href =`/${country.code.toLowerCase()}/${country.defaultLocale.toLowerCase()}`
                 return (
-                    <a key={index} href={href}>{country.code}</a>
+                    <Link key={index} to={href}>{country.code}</Link>
                 )
                 })}
              </div> 
