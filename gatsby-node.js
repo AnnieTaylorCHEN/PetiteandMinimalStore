@@ -75,30 +75,35 @@ exports.createPages = async ({ graphql, actions }) => {
   //create products pages
   const products = await graphql(`
       query  {
-      allContentfulCountry {
-        edges {
-          node {
-            code
-            node_locale
-            contentful_id
-            catalog {
-              name
+        allContentfulCountry {
+          edges {
+            node {
+              code
               node_locale
-              categories {
-                products {
+              contentful_id
+              catalog {
+                name
+                node_locale
+                categories {
                   name
-                  contentful_id
+                  products {
+                    contentful_id
+                    name
+                  }
+                  productsus {
+                    contentful_id
+                    name
+                  }
                 }
-                productsus {
-                  contentful_id
-                  name
+                country {
+                  marketId
                 }
               }
             }
           }
         }
       }
-    }
+      
   `)
 
   const edges = 
@@ -111,11 +116,8 @@ exports.createPages = async ({ graphql, actions }) => {
     const locale = node.node_locale.toLowerCase()
     if (locale === -1) return null
     const catalogPath = env !== 'production' ? `/${code}/${locale}` : `/${locale}`
-      
-    //create catalog page
-    const categorySlug = node.catalog.categories.map(category => {
-      category.name.trim().toLowerCase().replace(' & ', ' ').replace(/\s/gm, '-')})
-
+    const categorySlug = node.catalog.categories.map(category => {category.name.trim().toLowerCase()})
+     //create catalog page
     createPage({
       path: catalogPath,
       component: CatalogTemplate,
@@ -125,7 +127,7 @@ exports.createPages = async ({ graphql, actions }) => {
         shipping: node.code, 
         categorySlug,
         pageTitle: node.node_locale,
-        marketId: node.marketId
+        marketId: node.catalog.country.marketId
       }
     })
     

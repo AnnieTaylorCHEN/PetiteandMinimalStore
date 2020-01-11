@@ -12,7 +12,6 @@ const Products = (props) => {
         {/* Product list */}
         {data.map((product) => {
           const srcImg = `https:${product.image.file.url}?fm=jpg&q=70`
-          const imgFluid = product.image.fluid
           const productSlug = product.name.trim().toLowerCase().replace(/\s/gm, '-')
           const productLink = env!== 'production' ? `/${shop}/${lang}/${categorySlug}/${productSlug}` : `/${lang}/${categorySlug}/${productSlug}`
           return (
@@ -20,7 +19,6 @@ const Products = (props) => {
               <Link to={productLink} aria-label={product.name}>
                 <img 
                 src={srcImg} 
-                fluid={imgFluid}
                 alt={product.name} />
                 <h3>{product.name}</h3>
                 <p>Reference: {product.reference}</p>
