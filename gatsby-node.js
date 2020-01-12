@@ -3,7 +3,9 @@ const { createFilePath } = require("gatsby-source-filesystem")
 
 const PostTemplate = path.resolve("./src/templates/post-template.js")
 const BlogTemplate = path.resolve("./src/templates/blog-template.js")
+
 const ProductTemplate = path.resolve("./src/templates/product-template.js")
+const CategoryTemplate =path.resolve("./src/templates/category-template.js")
 const CatalogTemplate = path.resolve("./src/templates/catalog-template.js")
 
 
@@ -71,7 +73,7 @@ exports.createPages = async ({ graphql, actions }) => {
         },
       })
   })
-  //above ends the blog page
+  //---------------- above ends the blog page
 
   //create products pages
   const products = await graphql(`
@@ -87,6 +89,7 @@ exports.createPages = async ({ graphql, actions }) => {
                 node_locale
                 categories {
                   name
+                  contentful_id
                   products {
                     contentful_id
                     name
@@ -96,10 +99,8 @@ exports.createPages = async ({ graphql, actions }) => {
                     name
                   }
                 }
-                country {
-                  marketId
-                }
               }
+              marketId
             }
           }
         }
@@ -116,10 +117,9 @@ exports.createPages = async ({ graphql, actions }) => {
     const code = node.code.toLowerCase()
     const locale = node.node_locale.toLowerCase()
     if (locale === -1) return null
-    const catalogPath = env !== 'production' ? `/${code}/${locale}` : `/${locale}`
+    const catalogPath = env !== 'production' ? `/${code}/${locale}/` : `/${locale}/`
     console.log('catalog path',  catalogPath)
-    
-     //create catalog page
+     //create catalog page - indicating the all products for a specific region/country
     createPage({
       path: catalogPath,
       component: CatalogTemplate,
@@ -128,45 +128,59 @@ exports.createPages = async ({ graphql, actions }) => {
         language: node.node_locale,
         shipping: node.code, 
         pageTitle: node.code,
-        marketId: node.catalog.country.marketId
+        marketId: node.marketId
       }
     })
     
-    // //create category page
-    // node.catalog.categories.map(category => {
-    //   const categorySlug = category.name.trim().toLowerCase().replace(' & ', ' ').replace(/\s/gm, '-')
-    // //create category page
-    // createPage({
-    //   path: `/${node.code.toLowerCase()}/${node.node_locale.toLowerCase()}/${categorySlug}`,
-    //   component: ProductsTemplate, 
-    //   context: {
-    //     slug: `/${node.code.toLowerCase()}/${node.node_locale.toLowerCase()}/${categorySlug}`,
-    //     language: node.node_locale,
-    //     shipping: node.code,
-    //     categoryId: category.contentful_id,
-    //     categorySlug, 
-    //     pageTitle: category.name.trim()
-    //   }
-    // })
+    //create category page 
+    node.catalog.categories.map(category => {
+      const categorySlug = category.name.trim().toLowerCase().replace(' & ', ' ').replace(/\s/gm, '-')
+      const categoryPath = env !== 'production'
+          ? `/${code}/${locale}/${categorySlug}`
+          : `/${locale}/${categorySlug}`
+      console.log('category path: ', categoryPath)
+      console.log('categoryId: ', category.contentful_id)
+    createPage({
+      path: categoryPath,
+      component: CategoryTemplate, 
+      context: {
+        slug: categoryPath,
+        language: node.node_locale,
+        shipping: node.code,
+        categoryId: category.contentful_id,
+        categorySlug, 
+        pageTitle: category.name.trim(), 
+        marketId: node.marketId
+      }
+    })
+    
+
     //create product page
-    // category.products.map(product => {
-    //   const productSlug = product.name.trim().toLowerCase().replace(/\s/gm, '-')
-    //   createPage({
-    //     path: `/${node.code.toLowerCase()}/${node.node_locale.toLowerCase()}/${categorySlug}/${productSlug}`, 
-    //     component: ProductTemplate,
-    //     context: {
-    //       slug: `/${node.code.toLowerCase()}/${node.node_locale.toLowerCase()}/${categorySlug}/${productSlug}`,
-    //       language: node.node_locale,
-    //       shipping: node.code,
-    //       categoryId: category.contentful_id,
-    //       categorySlug,
-    //       categoryName: category.name.trim(),
-    //       productId: product.contentful_id,
-    //       pageTitle: product.name.trim()
-    //     }
-    //   })
-    // })
-  // })
+    const products = category[`products${code}`] ? category[`products${code}`] :category.products
+
+    products.map(product => {
+      const productSlug = product.name.trim().toLowerCase().replace('%','percent').replace(/\s/gm, '-')
+      const productPath = env !== 'production'
+            ? `/${code}/${locale}/${productSlug}`
+            : `/${locale}/${productSlug}`
+      console.log('product path: ', productPath)
+      createPage({
+        path: productPath, 
+        component: ProductTemplate,
+        context: {
+          slug: productPath,
+          language: node.node_locale,
+          shipping: node.code,
+          categoryId: category.contentful_id,
+          categorySlug,
+          categoryName: category.name.trim(),
+          productId: product.contentful_id,
+          pageTitle: product.name.trim(),
+          marketId: node.marketId
+        }
+      })
+    })
+  })
 
   })
 

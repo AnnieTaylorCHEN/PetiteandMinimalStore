@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 
 
-const Products = (props) => {
+const AllProducts = (props) => {
   
   const { data, shop, lang }= props
   const env = process.env.NODE_ENV
@@ -10,7 +10,7 @@ const Products = (props) => {
   return (
     <div>    
         {/* Product list */}
-        {data.map(product => {
+        {data.map( ({node: product}) => {
           console.log(data)
           const srcImg = `https:${product.image.file.url}`
           const productSlug = product.name.trim().toLowerCase().replace('%','percent').replace(/\s/gm, '-')
@@ -31,4 +31,4 @@ const Products = (props) => {
   )
 }
 
-export default Products
+export default AllProducts

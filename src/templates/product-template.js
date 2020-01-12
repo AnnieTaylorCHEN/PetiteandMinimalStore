@@ -4,6 +4,7 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Breadcrumb from '../components/breadcrumb'
+import SEO from '../components/seo'
 import Product from '../components/product'
 
 const ProductTemplate = (props) => {
@@ -19,33 +20,27 @@ const ProductTemplate = (props) => {
     }, data
   } = props
 
-  const delayTimer = useRef(null)
-  useEffect(() => {
-    return window.clearInterval(delayTimer.current)
-  })
-  const handleOnClick = e => {
-    if (e.target.hasAttribute('disabled')) {
-      return e.preventDefault()
-    }
-    delayTimer.current = window.setInterval(() => {
-      setStatus()
-    }, 1000)
-  }
+  // const delayTimer = useRef(null)
+  // useEffect(() => {
+  //   return window.clearInterval(delayTimer.current)
+  // })
+  // const handleOnClick = e => {
+  //   if (e.target.hasAttribute('disabled')) {
+  //     return e.preventDefault()
+  //   }
+  //   delayTimer.current = window.setInterval(() => {
+  //     setStatus()
+  //   }, 1000)
+  // }
 
   return (
     <Layout>
     <SEO title={pageTitle} />
-      <div
-        style={{
-          margin: "0 auto",
-          width: "100%",
-          textAlign: "center",
-        }}
-      >
+      <div>
         <Breadcrumb
         shop={shipping.toLowerCase()}
         lang={language}
-        // uri={slug}
+        uri={slug}
         categorySlug={categorySlug}
         categoryName={categoryName}
         productSlug={data.contentfulProduct.name}
@@ -55,7 +50,7 @@ const ProductTemplate = (props) => {
         shop={shipping.toLowerCase()}
         lang={language}
         data={data.contentfulProduct}
-        onClick={handleOnClick}
+        // onClick={handleOnClick}
         />
       </div>
     </Layout>

@@ -1,21 +1,22 @@
 import React from 'react'
 
 const Product = props => {
-    const {lang, data, onClick} = props
-    const srcImg = `https://${data.image.file.url}?fm=jpg&q=75`
+    const {shop, lang, data, onClick} = props
+    const srcImg = `https://${data.image.file.url}`
     const variants = data.variants.map(variant => {
         return {
           code: variant.code,
-          name: `${data.name} (${variant.size.name})`,
+          name: variant.name,
           label: variant.size.name
         }
       })
+      // console.log(variants)
 
       return (
         <div >
           <img src={srcImg} alt={data.name} />
           <h1>{data.name}</h1>
-          <p >{data.description.description}</p>
+          <p>{data.description.description}</p>
           {/* <div className="large">
             <CLayer.Price
               skuCode={data.variants[0].code}

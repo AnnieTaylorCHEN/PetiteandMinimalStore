@@ -10,15 +10,11 @@ const Store = () => {
     allContentfulCountry: { edges }
   } = useStaticQuery(graphql`
     {
-      allContentfulCountry(
-        sort: { fields: name }
-        filter: { node_locale: { eq: "en-US" } }
-      ) {
+      allContentfulCountry {
         edges {
           node {
             name
-            marketId
-            defaultLocale
+            node_locale
             code
           }
         }
@@ -31,7 +27,7 @@ const Store = () => {
         <div className="store">
         <h1>Choose your region:</h1>
         {edges.map((country, index) => {
-              const href = `/${country.node.code.toLowerCase()}/${country.node.defaultLocale.toLowerCase()}`
+              const href = `/${country.node.code.toLowerCase()}/${country.node.node_locale.toLowerCase()}/`
                 
               return (
                 <div key={index}  >
