@@ -134,12 +134,13 @@ exports.createPages = async ({ graphql, actions }) => {
     
     //create category page 
     node.catalog.categories.map(category => {
-      const categorySlug = category.name.trim().toLowerCase().replace(' & ', ' ').replace(/\s/gm, '-')
+      const categorySlug = category.name.trim().toLowerCase().replace(/\s/gm, '-')
       const categoryPath = env !== 'production'
           ? `/${code}/${locale}/${categorySlug}`
           : `/${locale}/${categorySlug}`
       console.log('category path: ', categoryPath)
       console.log('categoryId: ', category.contentful_id)
+      console.log('categorySlug: ', categorySlug)
     createPage({
       path: categoryPath,
       component: CategoryTemplate, 
@@ -164,6 +165,7 @@ exports.createPages = async ({ graphql, actions }) => {
             ? `/${code}/${locale}/${productSlug}`
             : `/${locale}/${productSlug}`
       console.log('product path: ', productPath)
+      console.log('productSlug: ', productSlug)
       createPage({
         path: productPath, 
         component: ProductTemplate,
