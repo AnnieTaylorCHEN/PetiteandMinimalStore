@@ -43,7 +43,7 @@ export default ({ data, pageContext }) => {
       <div className="pagination">
         {!isFirstPage && (
           <Link to={prevPage} rel="prev">
-            Prev Page
+            Prev
           </Link>
         )}
         {/* generate a sequence of numbers with array from ({length:num}) use index to replace the value of _ which is initialized with "undefined" on each position */}
@@ -54,7 +54,7 @@ export default ({ data, pageContext }) => {
         ))}
         {!isLastPage && (
           <Link to={nextPage} rel="next">
-            Next Page
+            Next
           </Link>
         )}
       </div>

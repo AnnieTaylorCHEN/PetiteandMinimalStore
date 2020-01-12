@@ -4,14 +4,15 @@ import { Link } from "gatsby"
 
 const Products = (props) => {
   
-  const { data, shop, lang, categorySlug }= props
+  const { data, shop, lang }= props
   const env = process.env.NODE_ENV
 
   return (
     <div>    
         {/* Product list */}
-        {data.map((product) => {
-          const srcImg = `https:${product.image.file.url}?fm=jpg&q=70`
+        {data.map(({node: product}) => {
+          const srcImg = `https:${product.image.file.url}`
+          const categorySlug = product.category.name
           const productSlug = product.name.trim().toLowerCase().replace(/\s/gm, '-')
           const productLink = env!== 'production' ? `/${shop}/${lang}/${categorySlug}/${productSlug}` : `/${lang}/${categorySlug}/${productSlug}`
           return (

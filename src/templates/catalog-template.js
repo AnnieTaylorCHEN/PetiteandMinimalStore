@@ -8,7 +8,7 @@ import SEO from '../components/seo'
 export default props => {
     const {
         pageContext: {
-            language, shipping, pageTitle, categorySlug},
+            language, shipping, pageTitle},
             data } = props
 
      return (
@@ -16,31 +16,26 @@ export default props => {
              <SEO title={pageTitle} />
              <Products 
                 shop={shipping.toLowerCase()}
-				lang={language.toLowerCase()}
-                categorySlug={categorySlug}
-				data={data.contentfulCountry.catalog.categories.products} />
+				        lang={language.toLowerCase()}
+				        data={data.allContentfulProduct.edges} />
          </Layout>
      )
 }
 
 export const query = graphql`
-	query ($shipping: String!, $language: String!)  {
-  contentfulCountry (node_locale: { eq: $language }, code: { eq: $shipping }) {
-    node_locale
-    code
-    catalog {
-      categories {
+	query Catalog($shipping: String!, $language: String!)  {
+    allContentfulProduct(filter: {category: {elemMatch: {catalog: {elemMatch: {country: {elemMatch: {marketId: {eq: $shipping}}}, node_locale: {eq: $language}}}}}}) {
+    edges {
+      node {
+        id
         name
-        node_locale
-        contentful_id
-        products {
-            id
+        reference
+        category {
           name
-          reference
-          image {
-            file {
-              url
-            }
+        }
+        image {
+          file {
+            url
           }
         }
       }

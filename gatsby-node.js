@@ -6,6 +6,7 @@ const BlogTemplate = path.resolve("./src/templates/blog-template.js")
 const ProductTemplate = path.resolve("./src/templates/product-template.js")
 const CatalogTemplate = path.resolve("./src/templates/catalog-template.js")
 
+
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
   
@@ -14,7 +15,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     createNodeField({
       node,
       name: "slug",
-      value: slug,
+      value: slug
     })
   }
 }
@@ -116,7 +117,8 @@ exports.createPages = async ({ graphql, actions }) => {
     const locale = node.node_locale.toLowerCase()
     if (locale === -1) return null
     const catalogPath = env !== 'production' ? `/${code}/${locale}` : `/${locale}`
-    const categorySlug = node.catalog.categories.map(category => {category.name.trim().toLowerCase()})
+    console.log('catalog path',  catalogPath)
+    
      //create catalog page
     createPage({
       path: catalogPath,
@@ -125,13 +127,12 @@ exports.createPages = async ({ graphql, actions }) => {
         slug: catalogPath,
         language: node.node_locale,
         shipping: node.code, 
-        categorySlug,
-        pageTitle: node.node_locale,
+        pageTitle: node.code,
         marketId: node.catalog.country.marketId
       }
     })
     
-    // //create category and product pages
+    // //create category page
     // node.catalog.categories.map(category => {
     //   const categorySlug = category.name.trim().toLowerCase().replace(' & ', ' ').replace(/\s/gm, '-')
     // //create category page

@@ -1,6 +1,6 @@
 import React, {useEffect, useRef} from "react"
 import { graphql } from "gatsby"
-import Img from "gatsby-image"
+
 
 import Layout from "../components/layout"
 import Breadcrumb from '../components/breadcrumb'
@@ -45,7 +45,7 @@ const ProductTemplate = (props) => {
         <Breadcrumb
         shop={shipping.toLowerCase()}
         lang={language}
-        uri={slug}
+        // uri={slug}
         categorySlug={categorySlug}
         categoryName={categoryName}
         productSlug={data.contentfulProduct.name}
