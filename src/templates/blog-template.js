@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 
-import Layout from "../components/layout"
+import Footer from "../components/footer"
 
 export default ({ data, pageContext }) => {
   const { currentPage, isFirstPage, isLastPage, totalPages } = pageContext
@@ -11,8 +11,8 @@ export default ({ data, pageContext }) => {
     currentPage - 1 === 1 ? "/blog" : `/blog/${String(currentPage - 1)}`
 
   return (
-    <Layout>
-      <div>
+    <>
+      <div className="blog-container">
         <h1 className="blog__title">Petite &amp; Minimal Blog</h1>
         <h4 className="blog__count">
           {data.allMarkdownRemark.totalCount} posts
@@ -58,7 +58,10 @@ export default ({ data, pageContext }) => {
           </Link>
         )}
       </div>
-    </Layout>
+
+      <Footer />
+      
+    </>
   )
 }
 

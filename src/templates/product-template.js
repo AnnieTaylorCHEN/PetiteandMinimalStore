@@ -1,6 +1,7 @@
 import React, {useEffect, useRef} from "react"
 import { graphql } from "gatsby"
 
+import useShoppingBag from '../hooks'
 
 import Layout from "../components/layout"
 import Breadcrumb from '../components/breadcrumb'
@@ -20,22 +21,29 @@ const ProductTemplate = (props) => {
     }, data
   } = props
 
-  // const delayTimer = useRef(null)
-  // useEffect(() => {
-  //   return window.clearInterval(delayTimer.current)
-  // })
-  // const handleOnClick = e => {
-  //   if (e.target.hasAttribute('disabled')) {
-  //     return e.preventDefault()
-  //   }
-  //   delayTimer.current = window.setInterval(() => {
-  //     setStatus()
-  //   }, 1000)
-  // }
+  const [status, setStatus] = useShoppingBag()
+
+  const delayTimer = useRef(null)
+  useEffect(() => {
+    return window.clearInterval(delayTimer.current)
+  })
+
+  const handleOnClick = e => {
+    if (e.target.hasAttribute('disabled')) {
+      return e.preventDefault()
+    }
+    delayTimer.current = window.setInterval(() => {
+      setStatus()
+    }, 1000)
+  }
 
   return (
-    <Layout>
-    <SEO title={pageTitle} />
+    <Layout 
+    {...props}
+    shoppingBagStatus={status}
+    setShoppingBagStatus={setStatus}
+    >
+      <SEO title={pageTitle} />
       <div>
         <Breadcrumb
         shop={shipping.toLowerCase()}
@@ -50,7 +58,7 @@ const ProductTemplate = (props) => {
         shop={shipping.toLowerCase()}
         lang={language}
         data={data.contentfulProduct}
-        // onClick={handleOnClick}
+        onClick={handleOnClick}
         />
       </div>
     </Layout>

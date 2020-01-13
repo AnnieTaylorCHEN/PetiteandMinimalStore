@@ -3,8 +3,8 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const Terms = () => (
-  <Layout>
+const Terms = (props) => (
+  <Layout {...props}>
     <SEO title="Terms & Conditions" />
     <h1>Terms &amp; Conditions</h1>
     <section className="links-text">

@@ -3,8 +3,8 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const Responsibility = () => (
-  <Layout>
+const Responsibility = (props) => (
+  <Layout {...props}>
     <SEO title="Responsibility" />
     <h1>Responsibility</h1>
     <section className="links-text">

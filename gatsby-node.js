@@ -12,19 +12,23 @@ const CatalogTemplate = path.resolve("./src/templates/catalog-template.js")
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
   
-  if (node.internal.type === "MarkdownRemark") {
-    const slug = createFilePath({ node, getNode, basePath: "posts" })
-    createNodeField({
-      node,
-      name: "slug",
-      value: slug
-    })
-  }
-}
+    if (node.internal.type === "MarkdownRemark") {
+      const slug = createFilePath({ node, getNode, basePath: "posts" })
+      console.log('slug :', slug)
+      createNodeField({
+        node,
+        name: "slug",
+        value: slug
+      })
+    }
+    
+  } 
+
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const env = process.env.NODE_ENV
+
   const blog = await graphql(`
   query MyQuery {
       allMarkdownRemark(limit: 1000, filter: {fields: {sourceName: {eq: "blog"}}}) {
@@ -149,7 +153,7 @@ exports.createPages = async ({ graphql, actions }) => {
         language: node.node_locale,
         shipping: node.code,
         categoryId: category.contentful_id,
-        categorySlug, 
+        categorySlug,
         pageTitle: category.name.trim(), 
         marketId: node.marketId
       }

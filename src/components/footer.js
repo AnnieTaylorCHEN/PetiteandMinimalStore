@@ -5,7 +5,7 @@ import facebook from "../images/facebook.svg"
 import instagram from "../images/instagram.svg"
 import pinterest from "../images/pinterest.svg"
 
-const Footer = ({ siteAuthor }) => (
+const Footer = () => (
   <footer>
     <section className="newsletter">
       <input placeholder="sign up to our newsletter"></input>
@@ -22,6 +22,12 @@ const Footer = ({ siteAuthor }) => (
     </section>
 
     <section className="links">
+      <h6>
+        <Link to="/">Home</Link>
+      </h6>
+      <h6>
+        <Link to="/blog">Blog</Link>
+      </h6>
       <h6>
         <Link to="/about">About</Link>
       </h6>
@@ -43,7 +49,7 @@ const Footer = ({ siteAuthor }) => (
       <p>
         {" "}
         © 2020, Handmade with &#10084; by{" "}
-        <a href="https://www.annietaylorchen.com/">{siteAuthor}</a>
+        <a href="https://www.annietaylorchen.com/">Annie Taylor Chen</a>
       </p>
     </section>
   </footer>

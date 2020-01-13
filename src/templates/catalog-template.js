@@ -1,6 +1,8 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
+import  useShoppingBag  from '../hooks'
+
 import Layout from '../components/layout'
 import AllProducts from '../components/allproducts'
 import SEO from '../components/seo'
@@ -10,9 +12,14 @@ export default props => {
         pageContext: {
             language, shipping, pageTitle},
             data } = props
+    const [ status, setStatus ] = useShoppingBag()
 
      return (
-         <Layout>
+         <Layout 
+            {...props}
+            shoppingBagStatus={status}
+		      	setShoppingBagStatus={setStatus}
+         >
              <SEO title={pageTitle} />
              <AllProducts 
                 shop={shipping.toLowerCase()}

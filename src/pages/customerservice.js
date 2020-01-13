@@ -3,8 +3,8 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const Customerservice = () => (
-  <Layout>
+const Customerservice = (props) => (
+  <Layout {...props}>
     <SEO title="Customer Service" />
     <h1>Customer Service</h1>
     <section className="links-text">

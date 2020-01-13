@@ -1,7 +1,9 @@
 @import-normalize;
+@import './home.css';
 @import './header.css';
 @import './footer.css';
 @import './blog.css';
+@import '404.css';
 
 /* typography */
 /* questrial-regular - latin */
@@ -81,6 +83,13 @@
       font-weight: bold;
   }
 
+  .container {
+      margin: 0 auto;
+      max-width: 80vw;
+  }
+
+/* store page */
+
 .store {
     display: flex;
     flex-direction: column;
@@ -98,3 +107,5 @@
     font-size: 3em;
     padding: 1em;
 }
+
+

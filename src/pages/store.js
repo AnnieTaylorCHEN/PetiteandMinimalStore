@@ -4,7 +4,7 @@ import {graphql, useStaticQuery } from 'gatsby'
 
 import Layout from '../components/layout'
 
-const Store = () => {
+const Store = (props) => {
 
   const {
     allContentfulCountry: { edges }
@@ -23,7 +23,7 @@ const Store = () => {
   `)
 
   return (
-    <Layout>
+    <Layout {...props}>
         <div className="store">
         <h1>Choose your region:</h1>
         {edges.map((country, index) => {

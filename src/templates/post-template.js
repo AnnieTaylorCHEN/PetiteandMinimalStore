@@ -1,10 +1,10 @@
 import React from "react"
-import { graphql } from "gatsby"
-import Layout from "../components/layout"
+import { graphql, Link } from "gatsby"
+import Footer from "../components/footer"
 
 export default ({ data: post }) => (
-  <Layout>
-    <div>
+  <>
+    <div className="blog-container">
       <h1 className="blog__post-title">
         {post.markdownRemark.frontmatter.title}
       </h1>
@@ -18,8 +18,14 @@ export default ({ data: post }) => (
         className="blog__post-text"
         dangerouslySetInnerHTML={{ __html: post.markdownRemark.html }}
       />
+      <div className="blog__links">
+        <Link to="/blog"><h1>Blog</h1></Link>
+        <Link to="/"><h1>Home</h1></Link>
+      </div>
     </div>
-  </Layout>
+    
+    <Footer />
+  </>
 )
 
 export const query = graphql`

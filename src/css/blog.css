@@ -1,3 +1,8 @@
+.blog-container {
+    margin: 3em auto;
+    max-width: 1000px;
+}
+
 .blog__title {
     padding: 1em 0;
 }
@@ -35,4 +40,11 @@
 
 .pagination:hover {
     text-transform: underline;
+}
+
+.blog__links {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 2em;
 }

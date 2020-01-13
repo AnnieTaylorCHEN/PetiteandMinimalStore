@@ -1,6 +1,8 @@
 import React from 'react'
 import {graphql } from 'gatsby'
 
+import useShoppingBag from '../hooks'
+
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Breadcrumb from '../components/breadcrumb'
@@ -22,10 +24,16 @@ export default props => {
         ? data.contentfulCategory[`products${ship}`]
         : data.contentfulCategory.products
 
-        console.log(products)
+    console.log(products)
+
+    const [status, setStatus] = useShoppingBag()
 
         return (
-            <Layout>
+            <Layout 
+            {...props}
+            shoppingBagStatus={status}
+            setShoppingBagStatus={setStatus}
+            >
                 <SEO title={pageTitle} />
                 <Breadcrumb 
                     shop={shipping.toLowerCase()}

@@ -1,7 +1,15 @@
 import React from 'react'
+import * as CLayer from 'commercelayer-react'
+
+import {usePriceLoading} from '../hooks'
+
+import loader from '../images/loader.svg'
 
 const Product = props => {
-    const {shop, lang, data, onClick} = props
+    const { data, onClick} = props
+
+    const loading = usePriceLoading('clayer-prices-ready')
+
     const srcImg = `https://${data.image.file.url}`
     const variants = data.variants.map(variant => {
         return {
@@ -12,33 +20,46 @@ const Product = props => {
       })
       // console.log(variants)
 
+      const amountProps = {
+        amount: {
+          className: 'large has-text-success'
+        },
+        compare: {
+          className: 'large has-text-grey-light'
+        }
+      }
+
       return (
+        <>
         <div >
           <img src={srcImg} alt={data.name} />
           <h1>{data.name}</h1>
           <p>{data.description.description}</p>
-          {/* <div className="large">
+
+          <div>
             <CLayer.Price
               skuCode={data.variants[0].code}
               AmountProps={amountProps}
             />
-          </div> */}
+            {loading ? <img src={loader} alt="loader" width="50" /> : null}
+          </div>
   
-          {/* <div className="select is-fullwidth variant-select-wrap">
+          <div className="select is-fullwidth variant-select-wrap">
             <CLayer.VariantSelect
               className="variant-select"
               PriceContainerId="price"
               AvailabilityMessageContainerId="availability-message"
               AddToBagId="add-to-bag"
-              promptText={locale[lang].select_size}
+              promptText='select size'
               skus={variants}
             />
           </div>
+
           <CLayer.AddToBag
             className={`add-to-bag button is-success is-fullwidth`}
             id="add-to-bag"
             AvailabilityMessageContainerId="availability-message"
-            text={locale[lang].add_to_bag}
+            text='BUY'
             onClick={onClick}
           />
   
@@ -48,22 +69,22 @@ const Product = props => {
             className="available-message has-text-success"
             availableTemplate={
               <p className="has-text-success">
-                <span className="is-capitalized">{locale[lang].available}</span>{' '}
+                <span className="is-capitalized">Avaialble</span>{' '}
                 in{' '}
                 <CLayer.AvailabilityMessageMinDays className="available-message-min-days" />
                 -
                 <CLayer.AvailabilityMessageMaxDays className="available-message-max-days" />{' '}
-                {locale[lang].days}
+                days
               </p>
             }
           />
+
           <CLayer.AvailabilityMessageUnavailableTemplate
             className="unavailable-message has-text-danger"
-            unavailableTemplate={<p>{locale[lang].not_available}</p>}
+            unavailableTemplate={<p>Unavailable</p>}
           />
-        </div> */}
-      </div>
-
+        </div>
+      </>
       )
 }
 
