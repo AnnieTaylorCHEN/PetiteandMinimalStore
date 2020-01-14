@@ -15,7 +15,7 @@ const Product = props => {
         return {
           code: variant.code,
           name: variant.name,
-          label: variant.size.name
+          // label: variant.size.name
         }
       })
       // console.log(variants)

@@ -12,7 +12,8 @@ const CatalogTemplate = path.resolve("./src/templates/catalog-template.js")
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
   
-    if (node.internal.type === "MarkdownRemark") {
+    if (node.internal.type === "MarkdownRemark" && node.fields.sourceName
+     === "blog") {
       const slug = createFilePath({ node, getNode, basePath: "posts" })
       console.log('slug :', slug)
       createNodeField({
