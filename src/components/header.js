@@ -10,7 +10,7 @@ const Header = ({ siteTitle, shipping, lang, shoppingBagPreviewProps : {onClick}
   const [isActive, setActiveBurger] = useState(false)
   const active = isActive ? 'is-active' : ''
   const main =
-    env !== 'production' ? '/' : 'https://petiteandminimalstore.netlify.com'
+    env !== 'production' ? '/' : '/'
   const handleActive = () => setActiveBurger(!isActive)
   const handleShoppingBag = () => {
     onClick()
