@@ -72,10 +72,10 @@ const Layout = ({
         languageCode={
           language ? language.toLowerCase().replace('-us', '') : 'en'
         }
-        cartUrl="https://petiteandminimalstore.netlify.com/"
-        returnUrl="https://petiteandminimalstore.netlify.com/"
-        privacyUrl="https://petiteandminimalstore.netlify.com/"
-        termsUrl="https://petiteandminimalstore.netlify.com/"
+        cartUrl="https://petiteandminimalstore.netlify.com"
+        returnUrl="https://petiteandminimalstore.netlify.com"
+        privacyUrl="https://petiteandminimalstore.netlify.com"
+        termsUrl="https://petiteandminimalstore.netlify.com"
       />
     </>
   )

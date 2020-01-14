@@ -6,11 +6,9 @@ import ShoppingBagPreview from './shoppingbagpreview'
 
 
 const Header = ({ siteTitle, shipping, lang, shoppingBagPreviewProps : {onClick} }) => {
-  const env = process.env.NODE_ENV
+  
   const [isActive, setActiveBurger] = useState(false)
   const active = isActive ? 'is-active' : ''
-  const main =
-    env !== 'production' ? '/' : '/'
   const handleActive = () => setActiveBurger(!isActive)
   const handleShoppingBag = () => {
     onClick()
@@ -19,7 +17,7 @@ const Header = ({ siteTitle, shipping, lang, shoppingBagPreviewProps : {onClick}
 
   return (
      <header className="header">
-      <Link to={main}><h1>{siteTitle}</h1></Link>
+      <Link to="/"><h1>{siteTitle}</h1></Link>
       <div className="header__info">
         <Link to="/store"><h3>Store</h3></Link>
         <Link to="/blog"><h3>Blog</h3></Link>
