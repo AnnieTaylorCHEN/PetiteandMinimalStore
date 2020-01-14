@@ -30,10 +30,10 @@ export default props => {
 }
 
 export const query = graphql`
-	query Catalog($shipping: String!, $language: String!)  {
+	query Catalog($shipping: String, $language: String)  {
     allContentfulProduct(
       filter: 
-        {category: {elemMatch: {catalog: {elemMatch: {country: {elemMatch: {marketId: {eq: $shipping}}}, 
+        {category: {elemMatch: {catalog: {elemMatch: {country: {elemMatch: {code: {eq: $shipping}}}, 
         node_locale: {eq: $language}}}}}}) 
         {
           edges {
