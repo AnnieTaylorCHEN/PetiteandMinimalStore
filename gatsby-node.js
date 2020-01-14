@@ -122,7 +122,7 @@ exports.createPages = async ({ graphql, actions }) => {
     const code = node.code.toLowerCase()
     const locale = node.node_locale.toLowerCase()
     if (locale === -1) return null
-    const catalogPath = env !== 'production' ? `/${code}/${locale}/` : `/${locale}/`
+    const catalogPath = env !== 'production' ? `/${code}/${locale}/` : `/${code}/${locale}/`
     console.log('catalog path',  catalogPath)
      //create catalog page - indicating the all products for a specific region/country
     createPage({
@@ -142,7 +142,7 @@ exports.createPages = async ({ graphql, actions }) => {
       const categorySlug = category.name.trim().toLowerCase().replace(/\s/gm, '-')
       const categoryPath = env !== 'production'
           ? `/${code}/${locale}/${categorySlug}`
-          : `/${locale}/${categorySlug}`
+          : `/${code}/${locale}/${categorySlug}`
       console.log('category path: ', categoryPath)
       console.log('categoryId: ', category.contentful_id)
       console.log('categorySlug: ', categorySlug)
