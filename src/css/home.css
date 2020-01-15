@@ -56,6 +56,11 @@
     transform:rotateX(  90deg ) translateZ( 350px );
 }
 
+.three-d-item:nth-child(6){
+    transform:rotateX(  -90deg ) translateZ( 350px );
+}
+
+
 .a:checked ~ .three-d-cube{
     transform:translateZ( -350px ) rotateY(  0deg );
 }
@@ -76,6 +81,10 @@
     transform:translateZ( -350px ) rotateX(  -90deg );
 } 
 
+.f:checked ~ .three-d-cube{
+    transform:translateZ( -350px ) rotateX(  90deg );
+}
+
 .three-d-bullet{
     margin: 750px 50px 0 0;
     float: left;
@@ -91,6 +100,7 @@ input.three-d-bullet {
     width: 25px;
     height: 25px;
 }
+
 
 input[type="radio"]::after {
     display: block;
@@ -130,70 +140,9 @@ input[type="radio"]:checked::before {
     background: var(--brand-green);
 }
 
-/* input[type="radio"]:checked + label span:after {
-    content: "";
-    display: block;
-    position: absolute;
-    height: 10px;
-    width: 10px;
-    border-radius: 50%;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-   
-} */
-
-/* radio button style  
-.radio-container {
-    color: red;
-    display: block;
-    position: relative;
-    margin: 750px 50px 0 0;
-    float: left;
-    cursor: pointer;
-    user-select: none;
+/* Home blog section */
+.home__blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1.5em;
 }
-
-.radio-container input[type=radio] {
-    position: absolute;
-    cursor: pointer;
-    z-index: 5;
-    opacity: 0;
-}
-
-.radiostyle {
-    display: block;
-    position: absolute;
-    border: 5px solid var(--light-gray);
-    border-radius: 50%;
-    height: 25px;
-    width: 25px;
-    top: -8px;
-    left: -8px;
-	transition: border .25s linear;
-}
-
-.radio-container:hover .radiostyle {
-    border: 5px solid var(--brown);
-}
-
-.radiostyle::before {
-    display: block;
-    position: absolute;
-	content: '';
-    border-radius: 50%;
-    height: 10px;
-    width: 10px;
-    margin: auto;
-    transform: translateX(2.5px) translateY(2.5px);
-	transition: background 0.25s linear;
-}
-
-.radio-container input[type=radio]:checked ~ .radiostyle {
-    border: 5px solid var(--brand-green);
-  }
-  
-.radio-container input[type=radio]:checked ~ .radiostyle::before{
-    background: var(--brand-green);
-}
-*/

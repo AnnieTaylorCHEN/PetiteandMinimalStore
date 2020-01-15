@@ -6,8 +6,9 @@ import SEO from "../components/seo"
 const Responsibility = (props) => (
   <Layout {...props}>
     <SEO title="Responsibility" />
-    <h1>Responsibility</h1>
-    <section className="links-text">
+    
+    <section className="links-text blog-container">
+      <h1>Responsibility</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
         blanditiis neque ducimus quibusdam, qui nihil et unde deserunt eaque

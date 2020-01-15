@@ -6,11 +6,13 @@ import SEO from "../components/seo"
 const About = (props) => (
   <Layout {...props}>
     <SEO title="About" />
-    <h1>About</h1>
-    <section className="links-text">
+    
+    <section className="links-text blog-container">
+    
+      <h1>About</h1>
       <p>
         Established in 2020, by Annie Taylor Chen, Petite &amp; Minimal makes
-        eco-friendly clothes for petite ladies to be seen in, and to believe in.{" "}
+        eco-friendly clothes for petite ladies to be seen in, and to believe in.
       </p>
 
       <p>
@@ -19,7 +21,7 @@ const About = (props) => (
         Petite &amp; Minimal collections stay true to our philosophy. We believe
         that fashion should be comfortable, lasting, an extension of our natural
         world. That is why we source the best materials and process them in the
-        most environment friendly way.{" "}
+        most environment friendly way.
       </p>
 
       <p>
@@ -27,7 +29,7 @@ const About = (props) => (
         we have a brand new business model. We make clothes only for you, our
         dear customers. Our clothes will truly fit you, made to order and we
         have confidence it will accompany you for a long time before we take it
-        back and make it into something new again.{" "}
+        back and make it into something new again.
       </p>
     </section>
   </Layout>

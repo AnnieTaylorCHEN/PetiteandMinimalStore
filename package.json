@@ -13,7 +13,6 @@
     "gatsby-plugin-offline": "^3.0.27",
     "gatsby-plugin-react-helmet": "^3.1.16",
     "gatsby-plugin-sharp": "^2.3.5",
-    "gatsby-plugin-snipcart": "^1.1.2",
     "gatsby-remark-images": "^3.1.38",
     "gatsby-remark-source-name": "^1.0.0",
     "gatsby-source-contentful": "^2.1.76",

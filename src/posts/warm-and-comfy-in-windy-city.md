@@ -1,10 +1,10 @@
 ---
-title: "How to Care for your Knitwear"
-date: "2020-01-03"
-featuredImage: "./care-your-sweater.jpg"
+title: "Keep Warm and Comfy in Windy Cities"
+date: "2020-01-10"
+featuredImage: "./windy-city.jpg"
 ---
 
-![How to Care for Your Sweater](care-your-sweater.jpg)
+![Keep Warm and Comfy in Windy Cities](windy-city.jpg)
 Suspendisse luctus ante et rhoncus lacinia. Nulla pellentesque volutpat dui eu rhoncus. Vestibulum eget ornare velit. Sed sodales lectus at diam ullamcorper congue. Nulla et lacus convallis, porta metus non, suscipit enim. Aenean eget vestibulum tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi viverra orci sit amet dolor tristique consectetur. Maecenas laoreet erat eu quam vehicula, sit amet eleifend turpis dictum. Aliquam rutrum ipsum sed interdum vulputate. Maecenas elementum dolor quis tortor mattis fermentum. Nulla pharetra urna in augue imperdiet, nec feugiat erat dignissim. In et congue ante. Aenean rhoncus in augue sed blandit.
 
 Donec in ligula non ligula accumsan venenatis sed rutrum enim. Quisque sit amet nisl in nisi volutpat semper. Aliquam nisi enim, laoreet sit amet purus id, rhoncus congue risus. Nunc et urna nunc. Curabitur malesuada nisl et velit pulvinar, sed imperdiet purus sollicitudin. Donec et lorem ac augue faucibus commodo. Integer vel dolor in magna imperdiet eleifend. Suspendisse elit nisi, suscipit sit amet justo ut, blandit egestas purus. Fusce a eros vehicula, pretium magna non, mollis lacus. Morbi suscipit id mauris et consequat. Nulla sagittis magna id massa lobortis mattis.

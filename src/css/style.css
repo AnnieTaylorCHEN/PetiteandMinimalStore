@@ -47,6 +47,10 @@
       text-transform: uppercase;
   }
 
+  p {
+      line-height: 1.5;
+  }
+
   input {
       outline: none;
   }

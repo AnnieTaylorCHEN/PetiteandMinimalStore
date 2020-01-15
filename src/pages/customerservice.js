@@ -6,8 +6,10 @@ import SEO from "../components/seo"
 const Customerservice = (props) => (
   <Layout {...props}>
     <SEO title="Customer Service" />
-    <h1>Customer Service</h1>
-    <section className="links-text">
+    
+    <section className="links-text blog-container">
+      
+      <h1>Customer Service</h1>
       <h4>Shipping</h4>
 
       <p>
@@ -39,7 +41,7 @@ const Customerservice = (props) => (
         be subjected to local taxes and/or import duties, which are levied by
         your local customs authority. The customer making the order has full
         responsibility of making sure that they are fully informed of these
-        costs.{" "}
+        costs.
       </p>
 
       <h4>RETURNS AND REFUND POLICY</h4>
@@ -55,7 +57,7 @@ const Customerservice = (props) => (
       <p>
         2. Please visit our returns section and request a return online. Once
         your return has been approved you will receive a return (RMA) number and
-        a return shipping label.{" "}
+        a return shipping label.
       </p>
 
       <p>

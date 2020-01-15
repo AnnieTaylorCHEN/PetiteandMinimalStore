@@ -6,8 +6,9 @@ import SEO from "../components/seo"
 const Terms = (props) => (
   <Layout {...props}>
     <SEO title="Terms & Conditions" />
-    <h1>Terms &amp; Conditions</h1>
-    <section className="links-text">
+   
+    <section className="links-text blog-container"> 
+      <h1>Terms &amp; Conditions</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
         blanditiis neque ducimus quibusdam, qui nihil et unde deserunt eaque

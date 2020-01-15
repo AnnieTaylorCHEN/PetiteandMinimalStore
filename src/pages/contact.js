@@ -6,8 +6,10 @@ import SEO from "../components/seo"
 const Contact = (props) => (
   <Layout {...props}>
     <SEO title="Contact" />
-    <h1>Contact</h1>
-    <section className="links-text">
+    
+    <section className="links-text blog-container">
+      <h1>Contact</h1>
+      
       <div className="links-contact">
         <h3>Online Customer Service</h3>
         <h4>service@petiteandminimal.com</h4>

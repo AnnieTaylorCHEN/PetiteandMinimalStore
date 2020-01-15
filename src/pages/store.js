@@ -42,23 +42,5 @@ const Store = (props) => {
     )
 }
 
-// export const query = graphql `
-//  {
-//   allContentfulProduct {
-//     edges {
-//       node {
-//         id
-//         name
-//         image {
-//           fluid {
-//             tracedSVG
-//             sizes
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
-// `
 
 export default Store

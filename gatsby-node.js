@@ -15,7 +15,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     if (node.internal.type === "MarkdownRemark" && node.fields.sourceName
      === "blog") {
       const slug = createFilePath({ node, getNode, basePath: "posts" })
-      console.log('slug :', slug)
+      // console.log('slug :', slug)
       createNodeField({
         node,
         name: "slug",
@@ -123,7 +123,7 @@ exports.createPages = async ({ graphql, actions }) => {
     const locale = node.node_locale.toLowerCase()
     if (locale === -1) return null
     const catalogPath = env !== 'production' ? `/${code}/${locale}/` : `/${code}/${locale}/`
-    console.log('catalog path',  catalogPath)
+    // console.log('catalog path',  catalogPath)
      //create catalog page - indicating the all products for a specific region/country
     createPage({
       path: catalogPath,
@@ -143,9 +143,9 @@ exports.createPages = async ({ graphql, actions }) => {
       const categoryPath = env !== 'production'
           ? `/${code}/${locale}/${categorySlug}`
           : `/${code}/${locale}/${categorySlug}`
-      console.log('category path: ', categoryPath)
-      console.log('categoryId: ', category.contentful_id)
-      console.log('categorySlug: ', categorySlug)
+      // console.log('category path: ', categoryPath)
+      // console.log('categoryId: ', category.contentful_id)
+      // console.log('categorySlug: ', categorySlug)
     createPage({
       path: categoryPath,
       component: CategoryTemplate, 
@@ -169,8 +169,8 @@ exports.createPages = async ({ graphql, actions }) => {
       const productPath = env !== 'production'
             ? `/${code}/${locale}/${productSlug}`
             : `/${locale}/${productSlug}`
-      console.log('product path: ', productPath)
-      console.log('productSlug: ', productSlug)
+      // console.log('product path: ', productPath)
+      // console.log('productSlug: ', productSlug)
       createPage({
         path: productPath, 
         component: ProductTemplate,
