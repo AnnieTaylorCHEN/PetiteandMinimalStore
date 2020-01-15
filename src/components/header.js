@@ -19,10 +19,8 @@ const Header = ({ siteTitle, shipping, lang, shoppingBagPreviewProps : {onClick}
      <header className="header">
       <Link to="/"><h1>{siteTitle}</h1></Link>
       <div className="header__info">
-        <Link to="/store"><h3>Store</h3></Link>
-        <Link to="/blog"><h3>Blog</h3></Link>
-      
-      {shipping && (
+
+      {/* {shipping && (
             <a
               role="button"
               className={`navbar-burger ${active}`}
@@ -34,7 +32,7 @@ const Header = ({ siteTitle, shipping, lang, shoppingBagPreviewProps : {onClick}
               <span aria-hidden="true"></span>
               <span aria-hidden="true"></span>
             </a>
-        )}
+        )} */}
 
         <div className={`navbar-menu ${active}`}>
           <div className="navbar-end">

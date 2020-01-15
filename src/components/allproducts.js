@@ -8,25 +8,29 @@ const AllProducts = (props) => {
   const env = process.env.NODE_ENV
 
   return (
-    <div>    
+    <div>   
+        <div className="products-grid ">
         {/* Product list */}
         {data.map( ({node: product}) => {
-          console.log(data)
+          {/* console.log(data) */}
           const srcImg = `https:${product.image.file.url}`
           const productSlug = product.name.trim().toLowerCase().replace('%','percent').replace(/\s/gm, '-')
           const productLink = env!== 'production' ? `/${shop}/${lang}/${productSlug}` : `/${lang}/${productSlug}`
           return (
-            <div key={product.id}>
+            <div key={product.id} className="">
               <Link to={productLink} aria-label={product.name}>
-                <img 
-                src={srcImg} 
-                alt={product.name} />
-                <h3>{product.name}</h3>
-                <p>Reference: {product.reference}</p>
+                <div className="product-grid__item">
+                  <img 
+                  src={srcImg} 
+                  alt={product.name} />
+                  <h3>{product.name}</h3>
+                  {/* <p>Reference: {product.reference}</p> */}
+                </div>
               </Link>
             </div>
           )
         })}
+        </div> 
     </div>
   )
 }

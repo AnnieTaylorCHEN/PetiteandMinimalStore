@@ -3,13 +3,14 @@ import { Link } from 'gatsby'
 
 const Breadcrumb = (props) => {
     const {categorySlug, shop, lang, productSlug, categoryName } = props
+    
     const env = process.env.NODE_ENV
-    const home = env !== 'production' ? '/' : 'https://contentful-gatsby-demo.netlify.com/'
-    const categoryLink = env !== 'production' ? `/${shop}/${lang.toLowerCase()}` : `/${lang.toLowerCase()}/${categorySlug}`
-    const productLink = env !== 'production' ? `/${shop}/${lang.toLowerCase()}` : `/${lang.toLowerCase()}/${categorySlug}/${productSlug}`
+    const home = env !== 'production' ? `/${shop}/${lang.toLowerCase()}` : `/${shop}/${lang.toLowerCase()}`
+    const categoryLink = env !== 'production' ? `/${shop}/${lang.toLowerCase()}/${categorySlug}` : `/${shop}/${lang.toLowerCase()}/${categorySlug}`
+    const productLink = env !== 'production' ? `/${shop}/${lang.toLowerCase()}/${categorySlug}/${productSlug}` : `/${shop}/${lang.toLowerCase()}/${categorySlug}/${productSlug}`
 
     return (
-        <nav aria-label="breadcrumbs">
+        <nav className="breadcrumb" aria-label="breadcrumbs">
             <ul>
                 <li>
                     <a href={home}>Home</a>

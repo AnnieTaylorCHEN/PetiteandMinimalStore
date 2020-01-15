@@ -47,7 +47,7 @@ const ProductTemplate = (props) => {
       <div>
         <Breadcrumb
         shop={shipping.toLowerCase()}
-        lang={language}
+        lang={language.toLowerCase()}
         uri={slug}
         categorySlug={categorySlug}
         categoryName={categoryName}
@@ -79,8 +79,11 @@ export const query = graphql`
         }
       }
       description {
-        description
+      description
+      childMarkdownRemark {
+        html
       }
+    }
       reference
       variants {
         size {

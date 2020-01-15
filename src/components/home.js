@@ -1,5 +1,6 @@
 import React from 'react'
 
+import Store from './store'
 import HomeBlogSection from './homeblogsection'
 
 import pmhome1 from '../images/pm-home-1.png'
@@ -48,7 +49,7 @@ export const Home = () => (
             </div>
 
         </section>
-
+        <Store />
         <HomeBlogSection />
     </>
 

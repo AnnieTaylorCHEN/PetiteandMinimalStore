@@ -15,7 +15,7 @@ export default props => {
         }, data
     }= props
 
-    console.log(data)
+    // console.log(data)
     
     const ship = shipping.toLowerCase()
     const products = 
@@ -24,7 +24,7 @@ export default props => {
         ? data.contentfulCategory[`products${ship}`]
         : data.contentfulCategory.products
 
-    console.log(products)
+    // console.log(products)
 
     const [status, setStatus] = useShoppingBag()
 
@@ -37,7 +37,7 @@ export default props => {
                 <SEO title={pageTitle} />
                 <Breadcrumb 
                     shop={shipping.toLowerCase()}
-                    lang={language}
+                    lang={language.toLowerCase()}
                     uri={slug}
                     categorySlug={categorySlug}
                     categoryName={data.contentfulCategory.name.trim()}

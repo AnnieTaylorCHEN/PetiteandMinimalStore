@@ -22,67 +22,71 @@ const Product = props => {
 
       const amountProps = {
         amount: {
-          className: 'large has-text-success'
+          className: 'has-text-success'
         },
         compare: {
-          className: 'large has-text-grey-light'
+          className: 'has-text-grey-light'
         }
       }
 
       return (
         <>
-        <div >
+        <div className="product-grid">
           <img src={srcImg} alt={data.name} />
-          <h1>{data.name}</h1>
-          <p>{data.description.description}</p>
+          <div className="product__info">
+              <h1 className="product__info__title">{data.name}</h1>
+              <div className="product__info__desc" 
+              dangerouslySetInnerHTML={{ __html: data.description.childMarkdownRemark.html}}></div>
 
-          <div>
-            <CLayer.Price
-              skuCode={data.variants[0].code}
-              AmountProps={amountProps}
-            />
-            {loading ? <img src={loader} alt="loader" width="50" /> : null}
+              <div className="product__info__price">
+                <CLayer.Price
+                  skuCode={data.variants[0].code}
+                  AmountProps={amountProps}
+                />
+                {loading ? <img src={loader} alt="loader" width="50" /> : null}
+              </div>
+      
+              <div className="product__info__sizes">
+                <CLayer.VariantSelect
+                  className="variant-select"
+                  PriceContainerId="price"
+                  AvailabilityMessageContainerId="availability-message"
+                  AddToBagId="add-to-bag"
+                  promptText='select size'
+                  skus={variants}
+                />
+              </div>
+
+      
+              <CLayer.AvailabilityMessageContainer id="availability-message" />
+      
+              <CLayer.AvailabilityMessageAvailableTemplate
+                className="available-message has-text-success"
+                availableTemplate={
+                  <p className="has-text-success">
+                    <span className="is-capitalized">Available</span>{' '}
+                    in{' '}
+                    <CLayer.AvailabilityMessageMinDays className="available-message-min-days" />
+                    -
+                    <CLayer.AvailabilityMessageMaxDays className="available-message-max-days" />{' '}
+                    days
+                  </p>
+                }
+              />
+
+              <CLayer.AvailabilityMessageUnavailableTemplate
+                className="unavailable-message has-text-danger"
+                unavailableTemplate={<p>Unavailable</p>}
+              />
+
+              <CLayer.AddToBag
+                className="button"
+                id="add-to-bag"
+                AvailabilityMessageContainerId="availability-message"
+                text='BUY'
+                onClick={onClick}
+              />
           </div>
-  
-          <div className="select is-fullwidth variant-select-wrap">
-            <CLayer.VariantSelect
-              className="variant-select"
-              PriceContainerId="price"
-              AvailabilityMessageContainerId="availability-message"
-              AddToBagId="add-to-bag"
-              promptText='select size'
-              skus={variants}
-            />
-          </div>
-
-          <CLayer.AddToBag
-            className={`add-to-bag button is-success is-fullwidth`}
-            id="add-to-bag"
-            AvailabilityMessageContainerId="availability-message"
-            text='BUY'
-            onClick={onClick}
-          />
-  
-          <CLayer.AvailabilityMessageContainer id="availability-message" />
-  
-          <CLayer.AvailabilityMessageAvailableTemplate
-            className="available-message has-text-success"
-            availableTemplate={
-              <p className="has-text-success">
-                <span className="is-capitalized">Avaialble</span>{' '}
-                in{' '}
-                <CLayer.AvailabilityMessageMinDays className="available-message-min-days" />
-                -
-                <CLayer.AvailabilityMessageMaxDays className="available-message-max-days" />{' '}
-                days
-              </p>
-            }
-          />
-
-          <CLayer.AvailabilityMessageUnavailableTemplate
-            className="unavailable-message has-text-danger"
-            unavailableTemplate={<p>Unavailable</p>}
-          />
         </div>
       </>
       )

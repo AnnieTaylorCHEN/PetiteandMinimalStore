@@ -2,7 +2,6 @@
 import React from 'react'
 import {graphql, useStaticQuery } from 'gatsby'
 
-import Layout from '../components/layout'
 
 const Store = (props) => {
 
@@ -23,22 +22,22 @@ const Store = (props) => {
   `)
 
   return (
-    <Layout {...props}>
-        <div className="store">
-        <h1>Choose your region:</h1>
+    <>
+        <div className="store blog-container">
+        <h1>Store:</h1>
         {edges.map((country, index) => {
               const href = `/${country.node.code.toLowerCase()}/${country.node.node_locale.toLowerCase()}/`
                 
               return (
-                <div key={index}  >
+                <div key={index} className="country" >
                     <a title={country.node.name} href={href}>
-                       <h2 className="country"> {country.node.name} </h2>
+                       <h3> {country.node.name} </h3>
                     </a>  
                 </div>
               )
             })}
         </div>
-    </Layout>
+    </>
     )
 }
 

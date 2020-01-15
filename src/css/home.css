@@ -140,9 +140,27 @@ input[type="radio"]:checked::before {
     background: var(--brand-green);
 }
 
+/* store section */
+
+.store {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+}
+
+.store h1 {
+    margin-bottom: 1.5em;
+}
+
+.store .country {
+    padding: 1em 1.5em;
+}
+
 /* Home blog section */
 .home__blog-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 1.5em;
 }
+

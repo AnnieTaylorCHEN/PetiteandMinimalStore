@@ -165,7 +165,7 @@ exports.createPages = async ({ graphql, actions }) => {
     const products = category[`products${code}`] ? category[`products${code}`] :category.products
 
     products.map(product => {
-      const productSlug = product.name.trim().toLowerCase().replace('%','percent').replace(/\s/gm, '-')
+      const productSlug = product.name.trim().toLowerCase().replace(/\s/gm, '-')
       const productPath = env !== 'production'
             ? `/${code}/${locale}/${productSlug}`
             : `/${locale}/${productSlug}`
