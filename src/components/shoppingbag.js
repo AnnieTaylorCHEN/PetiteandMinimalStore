@@ -21,7 +21,7 @@ const ShoppingBag = ({ open, close, lang }) => {
 				<CLayer.ShoppingBagItems
 					ItemsContainerTag='table'
 					itemTemplate={
-						<table id='shopping-bag-table' className='table is-fullwidth'>
+						<table id='shopping-bag-table' className='table'>
 							<tr>
 								<td className='shopping-bag-col shopping-bag-col-image'>
 									<CLayer.ShoppingBagItemImage />
@@ -43,16 +43,16 @@ const ShoppingBag = ({ open, close, lang }) => {
 					}
 				/>
 				<div>
-					<div>
-						<a
+					<div >
+						<button className="button"
 							id='shopping-bag-close'
 							onClick={close}
 						>
 							Continue Shopping
-						</a>
+						</button>
 					</div>
-					<div>
-						<CLayer.Checkout className={'button is-fullwidth is-success'} />
+					<div className="checkout-btn">
+						<CLayer.Checkout className="button" />
 					</div>
 				</div>
 			</div>

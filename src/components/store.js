@@ -24,7 +24,7 @@ const Store = (props) => {
   return (
     <>
         <div className="store blog-container">
-        <h1>Store:</h1>
+        <h2>Choose store:</h2>
         {edges.map((country, index) => {
               const href = `/${country.node.code.toLowerCase()}/${country.node.node_locale.toLowerCase()}/`
                 

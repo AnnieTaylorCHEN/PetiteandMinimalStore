@@ -32,12 +32,13 @@ const Product = props => {
       return (
         <>
         <div className="product-grid">
-          <img src={srcImg} alt={data.name} />
+          <img className="product-img" src={srcImg} alt={data.name} />
           <div className="product__info">
               <h1 className="product__info__title">{data.name}</h1>
               <div className="product__info__desc" 
               dangerouslySetInnerHTML={{ __html: data.description.childMarkdownRemark.html}}></div>
 
+              {/* price */}
               <div className="product__info__price">
                 <CLayer.Price
                   skuCode={data.variants[0].code}
@@ -45,10 +46,10 @@ const Product = props => {
                 />
                 {loading ? <img src={loader} alt="loader" width="50" /> : null}
               </div>
-      
+
+              {/* variant parameters such as size or color */}
               <div className="product__info__sizes">
                 <CLayer.VariantSelect
-                  className="variant-select"
                   PriceContainerId="price"
                   AvailabilityMessageContainerId="availability-message"
                   AddToBagId="add-to-bag"
@@ -64,7 +65,7 @@ const Product = props => {
                 className="available-message has-text-success"
                 availableTemplate={
                   <p className="has-text-success">
-                    <span className="is-capitalized">Available</span>{' '}
+                    <span>Available</span>{' '}
                     in{' '}
                     <CLayer.AvailabilityMessageMinDays className="available-message-min-days" />
                     -

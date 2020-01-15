@@ -43,10 +43,9 @@
     margin: 6em auto;
 }
 
-.product-grid img {
+.product-img{
     height: 75vh;
 }
-
 .product__info {
     display:flex;
     flex-direction: column;
@@ -58,6 +57,7 @@
 }
 
 .product__info__desc {
+    padding: 1.5em 3em;
     margin-bottom: 1.5em;
 }
 
@@ -77,11 +77,20 @@
     font-size: 1em;
     border: none;
     outline: none;
-    margin-bottom: 1.5em;
+    margin-bottom: em;
 }
 
 .compare-at-amount {
     text-decoration: line-through;
+    margin-left: 0.3em; 
+}
+
+.has-text-grey-light {
+    color: var(--brown);
+}
+
+.clayer-availability-message-container {
+    margin: 1.5em 0;
 }
 
 .available-message,
@@ -89,6 +98,4 @@
   display: none;
 }
 
-.has-text-danger {
-    color: red;
-}
+

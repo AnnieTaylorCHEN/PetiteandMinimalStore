@@ -1,0 +1,112 @@
+/* shopping bag */
+#shopping-bag {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 29; /* Stay on top */
+    top: 0; /* Stay at the top */
+    right: 0;
+    background-color: #fafafa;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 4em; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    border-left: 1px solid var(--light-gray);
+}
+
+  #shopping-bag.open {
+    width: 30vw;
+  }
+
+  .shopping-bag-content {
+    width: 30vw;
+    padding: 20px 40px;
+    overflow-x: hidden;
+  }
+
+  .shopping-bag-col {
+    font-size: 0.8rem;
+  }
+
+  .shopping-bag-col-image img {
+    width: 70px;
+    border: 1px solid #eee;
+  }
+
+  .shopping-bag-unavailable-message {
+    display: none;
+    margin-bottom: 10px;
+  }
+
+  #shopping-bag-preview-total {
+    text-align: right;
+    font-weight: bold;
+  }
+  
+  #shopping-bag-table {
+    background-color: #fafafa; 
+  }
+
+  #shopping-bag-table td {
+    border: none;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+    padding-bottom: 20px;
+  }
+
+  .shopping-bag-col-name{
+    padding: 0 1em;
+  }
+
+  .shopping-bag-col-qty{
+      width: 2em;
+  }
+
+  .shopping-bag-col-total {
+      padding: 0 1em;
+  }
+
+  .checkout-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 4em auto;
+  }
+
+  .clayer-shopping-bag-checkout {
+      color: white !important;
+  }
+
+  .clayer-shopping-bag-checkout:hover{
+      color:black !important;
+  }
+
+  #main {
+    transition: opacity 0.5s;
+    min-height: 72vh;
+  }
+
+  #main.open {
+    opacity: 0.3;
+  }
+
+  .has-text-danger {
+    color: red;
+}
+
+
+.tag {  
+    background-color: #A62700;
+    color: white;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .9rem;
+    height: 2em;
+    line-height: 1.5;
+    padding-left: .75em;
+    padding-right: .75em;
+    white-space: nowrap;
+}
+
+

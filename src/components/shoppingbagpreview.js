@@ -5,7 +5,7 @@ import shoppingbag from '../images/shoppingbag.svg'
 
 const ShoppingBagPreview = ({ onClick }) => {
   return (
-    <a id="shopping-bag-toggle" onClick={onClick}>
+    <div id="shopping-bag-toggle" role="button" onClick={onClick} onKeyDown={onClick} tabIndex={0}>
       <span>
         <img src={shoppingbag} alt="shopping bag icon" />
       </span>
@@ -15,7 +15,7 @@ const ShoppingBagPreview = ({ onClick }) => {
       >
         0
       </span>
-    </a>
+    </div>
   )
 }
 
