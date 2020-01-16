@@ -168,7 +168,7 @@ exports.createPages = async ({ graphql, actions }) => {
       const productSlug = product.name.trim().toLowerCase().replace(/\s/gm, '-')
       const productPath = env !== 'production'
             ? `/${code}/${locale}/${productSlug}`
-            : `/${locale}/${productSlug}`
+            : `/${code}/${locale}/${productSlug}`
       // console.log('product path: ', productPath)
       // console.log('productSlug: ', productSlug)
       createPage({

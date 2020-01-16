@@ -7,7 +7,7 @@ const Breadcrumb = (props) => {
     const env = process.env.NODE_ENV
     const home = env !== 'production' ? `/${shop}/${lang.toLowerCase()}` : `/${shop}/${lang.toLowerCase()}`
     const categoryLink = env !== 'production' ? `/${shop}/${lang.toLowerCase()}/${categorySlug}` : `/${shop}/${lang.toLowerCase()}/${categorySlug}`
-    const productLink = env !== 'production' ? `/${shop}/${lang.toLowerCase()}/${categorySlug}/${productSlug}` : `/${shop}/${lang.toLowerCase()}/${categorySlug}/${productSlug}`
+    const productLink = env !== 'production' ? `/${shop}/${lang.toLowerCase()}/${productSlug}` : `/${shop}/${lang.toLowerCase()}/${productSlug}`
 
     return (
         <nav className="breadcrumb" aria-label="breadcrumbs">

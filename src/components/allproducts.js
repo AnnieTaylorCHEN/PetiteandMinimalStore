@@ -15,7 +15,7 @@ const AllProducts = (props) => {
           
           const srcImg = `https:${product.image.file.url}`
           const productSlug = product.name.trim().toLowerCase().replace('%','percent').replace(/\s/gm, '-')
-          const productLink = env!== 'production' ? `/${shop}/${lang}/${productSlug}` : `/${lang}/${productSlug}`
+          const productLink = env!== 'production' ? `/${shop}/${lang}/${productSlug}` : `/${shop}/${lang}/${productSlug}`
           return (
             <div key={product.id} >
               <Link to={productLink} aria-label={product.name}>
