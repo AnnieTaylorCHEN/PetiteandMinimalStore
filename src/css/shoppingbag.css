@@ -90,12 +90,12 @@
   }
 
   .has-text-danger {
-    color: red;
+    color: var(--red);
 }
 
 
 .tag {  
-    background-color: #A62700;
+    background-color: var(--red);
     color: white;
     border-radius: 50%;
     display: inline-flex;
