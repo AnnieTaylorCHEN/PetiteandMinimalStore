@@ -103,10 +103,6 @@ exports.createPages = async ({ graphql, actions }) => {
                     contentful_id
                     name
                   }
-                  productsgb {
-                    contentful_id
-                    name
-                  }
                 }
               }
               marketId

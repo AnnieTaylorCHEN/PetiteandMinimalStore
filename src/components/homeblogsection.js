@@ -43,7 +43,7 @@ const HomeBlogSection = () => {
         <h4>Latest from our blog</h4>
         <div className="home__blog-grid">
         {edges.map(({ node }) => (
-          <div key={node.id} className="blog__post">
+          <div key={node.id} >
             <Link to={`/posts${node.fields.slug}`}>
               <Img
                 sizes={node.frontmatter.featuredImage.childImageSharp.sizes}

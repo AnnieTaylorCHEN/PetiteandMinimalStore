@@ -18,7 +18,7 @@ const Header = ({ siteTitle, shipping, lang, shoppingBagPreviewProps : {onClick}
   return (
      <header className="header">
       <Link to="/"><h1>{siteTitle}</h1></Link>
-      <div className="header__info">
+      <div >
 
       {/* {shipping && (
             <a
@@ -34,8 +34,8 @@ const Header = ({ siteTitle, shipping, lang, shoppingBagPreviewProps : {onClick}
             </a>
         )} */}
 
-        <div className={`navbar-menu ${active}`}>
-          <div className="navbar-end">
+        <div className={` shoppingbagicon ${active}`}>
+          <div>
             {shipping && <ShoppingBagPreview onClick={handleShoppingBag} />}
           </div>
         </div>

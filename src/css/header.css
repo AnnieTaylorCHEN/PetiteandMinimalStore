@@ -5,13 +5,16 @@
     padding: 1rem;
 }
 
-.header__info {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 1em;
+.shoppingbagicon {
+    position: fixed;
+    top: 1em;
+    right: 1em;
 }
 
-.header__info h3 {
-    margin-right: 1em;
+
+/* Phone */
+@media screen and (max-width: 600px) {
+    header h1 {
+        font-size: 1.5em;
+    }
 }

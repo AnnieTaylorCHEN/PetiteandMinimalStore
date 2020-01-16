@@ -98,4 +98,63 @@
   display: none;
 }
 
+/* Tablet */
+@media screen and (max-width: 1200px) {
 
+    .products-grid {
+        max-width: 100vw;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 1em;
+        margin: 2em auto;
+    }
+
+    .product-grid__item img {
+        height: 280px;
+    }
+
+    .product-grid {
+        max-width: 100vw;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 1em;
+        margin: 3em auto;
+    }
+}
+
+/* Phone */
+@media screen and (max-width: 600px) {
+    .products-grid {
+        max-width: 100vw;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 1em;
+        margin: 1.5em auto;
+    }
+
+    .product-grid__item img {
+        height: 350px;
+    }
+
+    .breadcrumb ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .breadcrumb ul li {
+        list-style: square;
+        margin-left: 0em;
+    }
+    
+    .product-img {
+        height: 70vh;
+    }
+
+    .product__info__desc {
+        padding: 0;
+        margin-bottom: 1.5em;
+    }
+
+    .product__info .button {
+        width: 70vw;
+    }
+    
+
+}

@@ -110,3 +110,29 @@
 }
 
 
+/* Tablet */
+@media screen and (max-width: 1200px) {
+  #shopping-bag.open {
+    width: 80vw;
+  }
+
+  .shopping-bag-content {
+    width: 80vw;
+  }
+}
+
+/* Phone */
+@media screen and (max-width: 600px) {
+  #shopping-bag.open {
+    width: 100vw;
+  }
+
+  .shopping-bag-content {
+    width: 100vw;
+    padding: 0 0.5em;
+  }
+
+  .clayer-shopping-bag-item-name {
+    display: none;
+  }
+}
