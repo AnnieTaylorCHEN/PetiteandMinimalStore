@@ -164,6 +164,10 @@ input[type="radio"]:checked::before {
     grid-gap: 1.5em;
 }
 
+.blog-container h4 {
+    margin-bottom: 1em;
+}
+
 /* Tablet */
 @media screen and (max-width: 1200px) {
     .home-container {
@@ -244,10 +248,6 @@ input[type="radio"]:checked::before {
     .home__blog-grid {
         grid-template-columns: repeat(1, 1fr);
         grid-gap: 0.5em;
-    }
-
-    .blog-container h4 {
-        margin-bottom: 1em;
     }
 
 }

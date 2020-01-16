@@ -24,7 +24,7 @@ const HomeBlogSection = () => {
             title
             featuredImage {
               childImageSharp {
-                sizes(maxWidth: 300, maxHeight: 250) {
+                sizes(maxWidth: 400, maxHeight: 250) {
                   ...GatsbyImageSharpSizes
                 }
               }
@@ -62,32 +62,3 @@ const HomeBlogSection = () => {
 }
 
 export default HomeBlogSection
-
-// export const query = useStaticQuery(graphql`
-//   {
-//     allMarkdownRemark (
-//       limit: 3
-//       sort: { order: DESC, fields: [frontmatter___date] }
-//       filter: {fields: {sourceName: {eq: "blog"}}}
-//     ) {
-//       edges {
-//         node {
-//           fields {
-//             slug
-//           }
-//           id
-//           frontmatter {
-//             title
-//             featuredImage {
-//               childImageSharp {
-//                 sizes(maxWidth: 300, maxHeight: 250) {
-//                   ...GatsbyImageSharpSizes
-//                 }
-//               }
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// `)
