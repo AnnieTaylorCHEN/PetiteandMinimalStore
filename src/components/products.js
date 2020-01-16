@@ -18,7 +18,7 @@ const Products = (props) => {
           const productLink = env!== 'production' ? `/${shop}/${lang}/${productSlug}` : `/${shop}/${lang}/${productSlug}`
 
           return (
-            <div key={product.id}>
+            <div key={product.contentful_id}>
               <Link to={productLink} aria-label={product.name}>
                 <div className="product-grid__item">
                   <img 
