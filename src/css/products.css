@@ -141,6 +141,7 @@
     .breadcrumb ul li {
         list-style: square;
         margin-left: 0em;
+        margin-bottom: 1em;
     }
     
     .product-img {
