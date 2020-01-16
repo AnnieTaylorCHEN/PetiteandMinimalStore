@@ -20,7 +20,7 @@ export default props => {
     const ship = shipping.toLowerCase()
     const products = 
         data.contentfulCategory[`products${ship}`] &&
-        data.contentfulCategory[`products${ship}`].length > 0
+        data.contentfulCategory[`products${ship}`].length > 0 
         ? data.contentfulCategory[`products${ship}`]
         : data.contentfulCategory.products
 

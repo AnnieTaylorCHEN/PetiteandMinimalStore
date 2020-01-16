@@ -103,9 +103,14 @@ exports.createPages = async ({ graphql, actions }) => {
                     contentful_id
                     name
                   }
+                  productsgb {
+                    contentful_id
+                    name
+                  }
                 }
               }
               marketId
+              name
             }
           }
         }
@@ -132,7 +137,7 @@ exports.createPages = async ({ graphql, actions }) => {
         slug: catalogPath,
         language: node.node_locale,
         shipping: node.code, 
-        pageTitle: node.code,
+        pageTitle: node.name,
         marketId: node.marketId
       }
     })
