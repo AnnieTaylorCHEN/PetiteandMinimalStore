@@ -16,7 +16,7 @@ export const Home = () => (
         <section className="home-container" >
             <div className="three-d-container">
                 
-                <input type="radio" className="three-d-bullet a" name="three-d" />
+                <input type="radio" defaultChecked className="three-d-bullet a" name="three-d"  />
                 <input type="radio" className="three-d-bullet b" name="three-d" />
                 <input type="radio" className="three-d-bullet c" name="three-d" />
                 <input type="radio" className="three-d-bullet d" name="three-d" />
