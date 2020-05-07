@@ -3,7 +3,7 @@
 ![Screenshot of the site](./docs/images/pm-screenshot.png)
 
 ## Live demo 
-[Click Here](https://petiteandminimalstore.netlify.com/)
+[Petite & Minimal](https://petiteandminimalstore.netlify.app/)
 
 ## Tech and Micro-services used
 - Gatsby 

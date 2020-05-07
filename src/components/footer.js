@@ -48,7 +48,7 @@ const Footer = () => (
     <section className="copyright">
       <p>
         {" "}
-        © 2020, Handmade with &#10084; by{" "}
+        © 2020. Handmade with <span role="img">&#10084;</span> by{" "}
         <a href="https://www.annietaylorchen.com/">Annie Taylor Chen</a>
       </p>
     </section>
