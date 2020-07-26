@@ -3,7 +3,7 @@
 ![Screenshot of the site](./docs/images/pm-screenshot.png)
 
 ## Live demo 
-[Petite & Minimal](https://petiteandminimalstore.netlify.app/)
+[Petite & Minimal](https://pmstore.annietaylorchen.com/)
 
 ## Tech and Micro-services used
 - Gatsby 

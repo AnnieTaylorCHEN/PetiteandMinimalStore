@@ -125,3 +125,8 @@ button:hover {
   max-width: 1200px;
   margin: 0 auto;
 }
+
+.notice {
+  color: darkred;
+  padding:1rem;
+}

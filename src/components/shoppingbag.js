@@ -9,6 +9,7 @@ const ShoppingBag = ({ open, close, lang }) => {
                     <h6>
                         Shopping Bag
                     </h6>
+					<p className="notice">Hi! If you don't see things added here, it probably means the test purchase limit is reached for the free demo for this month.😅 </p>
 					<div>
 						<CLayer.ShoppingBagTotal />
 					</div>
